@@ -150,7 +150,7 @@ removed elements.
 Uncomment the first lines of code and try and predict how the array will change
 Then, use the .splice() method to fix the two arrays
 
-
+*/
 
 
 ////////////////////////////
