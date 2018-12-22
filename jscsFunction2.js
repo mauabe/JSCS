@@ -28,24 +28,42 @@ function challenge13() {
 
 
 // Challenge 14
-var redundantArr = [1, 2, 1, 3, 4, 5, 4];
-// Write your code here
+const redundantArr = [1, 2, 1, 3, 4, 5, 4];
+// Using Javascript Set
+/*
+const newSet = new Set(redundantArr); 
+const uniqueArr = Array.from(newSet)
+*/
+
+//Using indexOf() callback and filter
+const distinct = function(value, index, array){
+  return array.indexOf(value) === index;
+}
+const uniqueArr = redundantArr.filter(distinct)
+
 // Uncomment the line below to test your code
-// console.log('Challenge 14:', uniqueArr);
+console.log('Challenge 14:', uniqueArr);
 // should print 'Challenge 14: [ 1, 2, 3, 4, 5 ]'
 
 
 // Challenge 15
-// Write your code here
+// Recursive sum
+const sumRange = function(n){
+  let result = 0;
+  if(n = 1){return;}
+  result = sumRange(n) + sumRange(n-1);
+}
+
+
 // Uncomment the line below to test your code
-// console.log('Challenge 15:', sumRange(3));
-// should print 'Challenge 14: 6'
+console.log('Challenge 15:', sumRange(3));
+// should print 'Challenge 15: 6'
 
 // Challenge 16
 // Write your code here
 // Uncomment the line below to test your code
-// console.log('Challenge 15:', getLength(['x', 'y', 'z']));
-// should print 'Challenge 15: 3'
+console.log('Challenge 16:', getLength(['x', 'y', 'z']));
+// should print 'Challenge 16: 3'
 
 
 // Challenge 17
