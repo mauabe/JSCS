@@ -35,8 +35,8 @@ Luckily enough Javascript makes accessing property values really easy.
 There are two ways to access the values stored in objects, they are bracket syntax:
 
 var name = {
-  first: "Will",
-  last: "Sentence"
+  first: "Mauricio",
+  last: "Feldman-Abe"
 };
 console.log(name["first"]); // logs => "Will"
 or we can use whats called dot notation:
@@ -53,6 +53,7 @@ Create an object named team with two properties, partner1 and partner2
 write a function sayTeamNames that accepts a single parameter teamObj
 have that sayTeamNames log both partner names separated by ' and '
 call sayTeamNames with your team object
+
 Challenge 4
 For loops allow us to repeat actions multiple times. A very specific type of for loop called 
 a for.. in loop allows us to loop through the properties of an object. The for...in loop specifies 
@@ -122,7 +123,7 @@ items in certain ways
 array.pop() removes the last item from an array and returns this item
 array.push() accepts one or more arguments and adds them to the end of the array
 array.shift() removes the first item from an array and returns this item, shifting all other items down one
-array.push() accepts one or more arguments and adds them to the beginning of the array
+array.unshift() accepts one or more arguments and adds them to the beginning of the array
 Use these methods in Challenge 10
 
 Challenge 11
@@ -173,7 +174,6 @@ let myObj = {
 let myNestedObj = {
   outer: 'outer value',
   innerObj: { inner: 'inner value' }
-  
 } 
 
 console.log(myNestedObj.innerObj.inner);
@@ -324,7 +324,7 @@ var numCount = [0, 1, "two", "three", 4];
 numCount.splice(2,2,2,3)
 console.log(numCount);
 var wordCount = ["zero", "one", 2, 3, "four"];
-wordCount.splice(2,2,false,'three')
+wordCount.splice(2,2,'two','three')
 console.log(wordCount);
 
 
