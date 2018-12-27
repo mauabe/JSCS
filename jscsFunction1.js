@@ -95,3 +95,16 @@ console.log('Challenge 8:', makeNumArray(1, 5));
 function getRandomNumber() {
   return Math.ceil(Math.random() * 10);
 }
+
+// Challenge 9
+const lowHigh = (low, high) => {
+  let number = getRandomNumber();
+	if (number >= 1 && number <= 5){
+    return number.toString() + ' ' + low;
+  } else if (number >=6 && number <= 10){
+    return number.toString() + ' ' + high;
+  }
+}
+// Uncomment the line below to test your code
+console.log('Challenge 9:', lowHigh('puppy', 'dog'));
+// should print 'Challenge 9: 3 puppy' or 'Challenge 9: 6 dog'
