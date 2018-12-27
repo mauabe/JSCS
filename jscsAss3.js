@@ -51,7 +51,7 @@ More Info: https://en.wikipedia.org/wiki/Fibonacci_number
 //   }
 // }
 
-// Using For Loop
+// Using For Loop and array
 function nthFibonacci(n) {
   let array = [];
   for (let i = 0; i <= n; i++) {
