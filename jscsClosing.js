@@ -10,16 +10,16 @@
 // addingToX(4) will return 10
 // addingToX(5) will return 15
 // addingToX(10) will return 55
-function addingToX(number) {
-  var x = number * (number + 1) /2;
-  return x;
-  }
+// function addingToX(number) {
+//   let x = number * (number + 1) / 2;
+//   return x;
+// }
   
-  // TESTS -- DO NOT DELETE
-  console.log(addingToX(1));  // 1
-  console.log(addingToX(2));  // 3
-  console.log(addingToX(3));  // 6
-  console.log(addingToX(10)); // 55
+  // TESTS 
+  // console.log(addingToX(1));  // 1
+  // console.log(addingToX(2));  // 3
+  // console.log(addingToX(3));  // 6
+  // console.log(addingToX(10)); // 55
   
   
   // Challenge Part 2
@@ -33,12 +33,20 @@ function addingToX(number) {
   // arrayToX(3) will return [1, 3, 6]
   // arrayToX(4) will return [1, 3, 6, 10]
   // arrayToX(5) will return [1, 3, 6, 10, 15]
-  
-  function arrayToX(number) {
-  
+  function addingToX(number) {
+    if(number === 0){return 0;}
+    else return number += addingToX(number - 1);
   }
   
-  // TESTS -- DO NOT DELETE
+function arrayToX(number) {
+  const result = [];  
+  for (let i = 0; i < number; i++){
+    result.push(addingToX(number - i));
+  }
+  return result.reverse();
+}
+
+  // TESTS
   console.log(arrayToX(1));   // [1]
   console.log(arrayToX(2));   // [1, 3]
   console.log(arrayToX(3));   // [1, 3, 6]
