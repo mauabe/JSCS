@@ -33,7 +33,7 @@ console.log(map([1, 2, 3], addTwo));
 
 
 // Challenge 4
-function forEach(array, callback) {
+function forEachFunction(array, callback) {
  let output = [];
  array.forEach(function(element) {
    output.push(callback(element));
@@ -61,11 +61,14 @@ console.log(mapWith([1,2,3], addTwo));
 
 //Extension 2
 function reduce(array, callback, initialValue) {
-
-    
-  
+  let result;
+  for (let i = 0; i < array.length; i++){
+     result = callback(result, array[i]);
+  }
+  return result;
 }
 
+  
 //Extension 3
 function intersection(arrays) {
 
@@ -76,11 +79,15 @@ function intersection(arrays) {
 
 //Extension 4
 function union(arrays) {
-
+  let flat = arrays.reduce((a, b) => a.concat(b), []);
+  let result = [... new Set(arrays)];
+  return result;
 }
 
 // console.log(union([5, 10, 15], [15, 88, 1, 5, 7], [100, 15, 10, 1, 5]));
 // should log: [5, 10, 15, 88, 1, 7, 100]
+
+
 
 //Extension 5
 function objOfMatches(array1, array2, callback) {
@@ -97,4 +104,3 @@ function multiMap(arrVals, arrCallbacks) {
 
 // console.log(multiMap(['catfood', 'glue', 'beer'], [function(str) { return str.toUpperCase(); }, function(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }, function(str) { return str + str; }]));
 // should log: { catfood: ['CATFOOD', 'Catfood', 'catfoodcatfood'], glue: ['GLUE', 'Glue', 'glueglue'], beer: ['BEER', 'Beer', 'beerbeer'] }
-
