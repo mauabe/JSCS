@@ -1,5 +1,3 @@
-//jscsClosures.js
-
 // Type JavaScript here and click "Run Code" or press Ctrl + s
 console.log('Hello, world!');
 
@@ -151,7 +149,7 @@ function multiMap(arrVals, arrCallbacks) {
       storage[arrVals[i]].push(arrCallbacks[j](arrVals[i]))
     }
   }
-  return storage
+  return storage;
 }
 
 console.log(multiMap(['catfood', 'glue', 'beer'], [function(str) { return str.toUpperCase(); }, function(str) { return str[0].toUpperCase() + str.slice(1).toLowerCase(); }, function(str) { return str + str; }]));
