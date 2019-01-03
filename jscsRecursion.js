@@ -8,29 +8,17 @@
 // Modify the function so that it returns a string containing the input character repeated 5 times
 // Use recursion!
 
-//Tail recursion examaple!
-// function repeater(char, n = 5, str = "") {
-//   if (str.length === n) {
-//     return str;
-//   }
-//   str += char;
-//   return repeater(char, n, str);
-// }
-
 function repeater(char, n = 5) {
-  if (n===0) return '';
+  if (n === 0) return '';
   return char + repeater(char, n-1);
 }
 
-
-/// TAIL end process
-
+/// TAIL end recursion process
 function repeater(char, n = 5, str = '') {
-  if (n===0) return '';
+  if (n === 0) return '';
   str += char;
   return char + repeater(char, n-1, str);
 }
-
 
 // To check if you've completed the challenge, uncomment these console.logs!
 console.log(repeater('g'));// -> 'ggggg'
@@ -47,13 +35,12 @@ console.log(repeater('j'));// -> 'jjjjj'
 // Use recursion!
 
 function isEven(n) {
- if (n % 2 === 0) {
-   return true
- } else {
-   return false
- }
+  if (n % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
 }
-
 
 function isEven(n) {
   if (n === 0) return true;
@@ -62,9 +49,8 @@ function isEven(n) {
 
 // To check if you've completed the challenge, uncomment these console.logs!
 console.log(isEven(0)); // -> true
-// console.log(isEven(5)); // -> false
-// console.log(isEven(10)); // -> true
-
+console.log(isEven(5)); // -> false
+console.log(isEven(10)); // -> true
 
 
 ////////////////////////////
@@ -77,24 +63,20 @@ console.log(isEven(0)); // -> true
 // The factorial of n is the product of all numbers between 1 and n
 // Ex: 5! = 5 * 4 * 3 * 2 * 1;
 
-
 function factorial(num) {
-  if (num === 1) return 1;
-  return num & factorial(num - 1);
+  if (num === 1) {return 1;}
+  return num * factorial(num - 1);
 }
 
-
 function factorial(num, product = 1) {
-  if (num === 1) product;
+  if (num === 1) {return product;}
   return factorial(num - 1, product * num);
 }
 
 // To check if you've completed the challenge, uncomment these console.logs!
-// console.log(factorial(4)); // -> 24
-// console.log(factorial(6)); // -> 720
-// console.log(factorial(0)); // -> 1
-
-
+console.log(factorial(4)); // -> 24
+console.log(factorial(6)); // -> 720
+console.log(factorial(0)); // -> 1
 
 
 ////////////////////////////
@@ -111,12 +93,10 @@ function getLength(array, i = 0) {
   return getLength(array, i + 1);
 }
 
-
-
 // To check if you've completed the challenge, uncomment these console.logs!
-// console.log(getLength([1])); // -> 1
-// console.log(getLength([1, 2])); // -> 2
-// console.log(getLength([1, 2, 3, 4, 5])); // -> 5
+console.log(getLength([1])); // -> 1
+console.log(getLength([1, 2])); // -> 2
+console.log(getLength([1, 2, 3, 4, 5])); // -> 5
 
 
 ////////////////////////////
