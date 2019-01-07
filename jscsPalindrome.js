@@ -14,7 +14,13 @@
 // Hint: look up how to use regex in JS - specifically how to rip away all characters that aren't letters
 
 function palindrome(string) {
-
+//  return string = string.split('').reverse().join('');
+  var str = string.toLowerCase().replace(/\s/g, "");
+  if(str.length === 0 || str.length === 1){return true;}
+  else if(str[0] === str[str.length -1 ]){
+    return palindrome(str.slice(1, str.length - 1))
+    }
+  return false;
 }
 
 function palindromeTests() {

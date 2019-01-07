@@ -81,8 +81,7 @@ function factorial(n) {
 }
 
 function factorial(n, product = 1) {
-  if (n === 0) {return product;}
-  if (n === 1) {return product;}
+  if (n === 0 || n === 1) {return product;}
   else  return factorial(n - 1, product * n);
 }
 
