@@ -231,11 +231,6 @@ function headsOrTails(array, coin = [], result = []){
   return result;
 }
 
-let first  = ['a', 'b', 'c'];
-let second = ['d', 'e'];
-let third  = ['f', 'g', 'h'];
-
-console.log(getCombitation([first, second, third]));
 
 
 
