@@ -81,8 +81,7 @@ function factorial(n) {
 }
 
 function factorial(n, product = 1) {
-  if (n === 0) {return product;}
-  if (n === 1) {return product;}
+  if (n === 0 || n === 1) {return product;}
   else  return factorial(n - 1, product * n);
 }
 
@@ -232,11 +231,6 @@ function headsOrTails(array, coin = [], result = []){
   return result;
 }
 
-let first  = ['a', 'b', 'c'];
-let second = ['d', 'e'];
-let third  = ['f', 'g', 'h'];
-
-console.log(getCombitation([first, second, third]));
 
 
 

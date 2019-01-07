@@ -10,10 +10,11 @@
 // addingToX(4) will return 10
 // addingToX(5) will return 15
 // addingToX(10) will return 55
-// function addingToX(number) {
-//   let x = number * (number + 1) / 2;
-//   return x;
-// }
+
+function addingToXPart1(number) {
+  let x = number * (number + 1) / 2;
+  return x;
+}
   
   // TESTS 
   // console.log(addingToX(1));  // 1
