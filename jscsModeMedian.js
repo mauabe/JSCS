@@ -9,21 +9,15 @@
 
 function mode(arr) {
 	let counts = {};
-  
-  // fill counts
+  let mode;
+  let most = 0;
+
+  // fill counts storage object
   for (let elem of arr) {
     if (!counts[elem]) counts[elem] = 0;
     counts[elem] ++;
   }
-  
-  for (let i = 0; i < arr.length; i ++) {
-    let element = arr[i];
-    
-  }
-  
-  let mode;
-  let most = 0;
-  
+
   // compare each key in counts to current mode
   for (let elem in counts) {
     if (counts[elem] > most) {
@@ -58,6 +52,7 @@ function mode2(arr) {
   return mode;
 }
 
+// n^2 * logn
 function mode3(arr) {
   let mode;
   let most = 0;
@@ -78,7 +73,6 @@ function mode3(arr) {
 }
 
 
-// n^2 * logn
 
 // nlogn * n
 function mode4(arr){
@@ -88,15 +82,20 @@ function mode4(arr){
    ).pop();
 }
 
+function mode5(arr){
+   arr.sort((a,b) =>{ ( arr.filter(v => v===a).length - arr.filter(v => v===b).length) })
+  return arr.pop();
+}
+
 // Extension: solve this in 0(n) time
 
+// modeTests() // uncomment to test!
 function modeTests() {
   console.log(mode3([1,2,2,1,1,3, 7, 3]), ' -> 1');
   console.log(mode3([1]), '1');
   console.log(mode3([2, 2, 2, 2, 3, 3, 3]), ' -> 2');
 }
 
-// modeTests() // uncomment to test!
 
 ////////////////////////////
 //     FIND MEDIAN
@@ -108,16 +107,15 @@ function modeTests() {
 // Ex: [10, 4, 7, 6, 1], median is 6
 
 function median(array) {
-	let arr = array.sort(function(a, b) {return a - b})
-  if (arr.length % 2 === 1) return arr[Math.floor(arr.length / 2)];
+	let arr = array.sort((a, b) => a - b);
+  if (arr.length % 2 === 1) {return arr[Math.floor(arr.length / 2)];}
   return (arr[arr.length / 2] + arr[arr.length / 2 - 1]) / 2
 }
 
+// medianTests() // uncomment to test!
 function medianTests() {
   console.log(median([1, 2, 3, 4, 5]), ' -> 3');
   console.log(median([10, 4, 7, 6, 1]), ' -> 6');
   console.log(median([2, 2, 2, 2, 3, 3, 3]), ' -> 2');
   console.log(median([2, 2, 2, 2, 3, 3, 3, 3]), ' -> 2.5');
 }
-
-// medianTests() // uncomment to test!
