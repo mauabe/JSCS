@@ -33,7 +33,7 @@ const findMode = function(array){
       mode = modesArr[0];
     }
   }
-  return parseInt(mode);
+  return parseInt(mode); 
 }
 
 const modeMean = function(array) {
