@@ -78,3 +78,18 @@ const arr1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
 const arr2  = [15,9,9,'ferret',9,26,12,12,'dog'];
 const arr3 =  [12,'ferret','dog'];
 console.log(commonElements3(arr1, arr2, arr3));
+
+
+//USING REDUCE
+function commonElementsN(arrays) {
+  // let args = Array.from(arguments);
+  let args = [...arguments];
+  return [...new Set(args.reduce((a, b) => a.filter((elem) => b.indexOf(elem) > -1)))];
+  // return [...new Set(args.reduce((a, b) => a.filter((elem) => b.includes(elem))))];
+}
+
+//TESTING:
+const arr1 = [1,4,6,7,'ferret',12,12,99,2000,'dog','dog',99,1000];
+const arr2  = [15,9,9,'ferret',9,26,12,12,'dog'];
+const arr3 =  [12,'ferret','dog'];
+console.log(commonElementsN(arr1, arr2, arr3)); // ['ferret', 12, 'dog']
