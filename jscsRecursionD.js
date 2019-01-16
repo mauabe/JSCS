@@ -38,4 +38,45 @@ var compress = function(list) {
 // itself.
 // augmentElements([[],[3],[7]], 5); // [[5],[3,5],[7,5]]
 var augmentElements = function(array, aug) {
+
+	//works without recursion
+	//array.forEach(elem => elem.push(aug));
+	if(array.length === 0){return []}
+	array[0].push(aug);
+	augmentElements(array.slice(1), aug);
+	return array;
 };
+
+
+// 34. Reduce a series of zeroes to a single 0.
+// minimizeZeroes([2,0,0,0,1,4]) // [2,0,1,4]
+// minimizeZeroes([2,0,0,0,1,0,0,4]) // [2,0,1,0,4]
+var minimizeZeroes = function(array) {
+	if(array.length <= 1){return array;}
+	else if(array[0] === 0 && array[1] === 0){
+			return minimizeZeroes(array.slice(1));
+	} else return [array[0], ...minimizeZeroes(array.slice(1))]
+};
+
+
+
+// 35. Alternate the numbers in an array between positive and negative regardless of
+// their original sign. The first number in the index always needs to be positive.
+// alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
+// alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
+var alternateSign = function(array) {
+	if(array.length === 0){return array}
+	//if(array[0] < 0){Math.abs(array)}
+	
+	//{array[0].toString().slice(1).parseInt();}
+	//if(array[1] > 0){'-'.concat(array[1].toString()).parseInt();}
+	for(let i = 0; i < array.length; i++){
+		if(i % 2 === 1){ 
+			array[i] = Math.abs(array[i]) * -1
+		}  //negative
+		if(i % 2 === 0){
+			array[i] = Math.abs(array[i])
+		} //positive
+	}
+	return array;
+}
