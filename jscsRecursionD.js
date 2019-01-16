@@ -38,6 +38,7 @@ var compress = function(list) {
 // itself.
 // augmentElements([[],[3],[7]], 5); // [[5],[3,5],[7,5]]
 var augmentElements = function(array, aug) {
+
 	//works without recursion
 	//array.forEach(elem => elem.push(aug));
 	if(array.length === 0){return []}
@@ -78,4 +79,4 @@ var alternateSign = function(array) {
 		} //positive
 	}
 	return array;
-};
+}
