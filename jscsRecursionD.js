@@ -64,18 +64,15 @@ var minimizeZeroes = function(array) {
 // alternateSign([2,7,8,3,1,4]) // [2,-7,8,-3,1,-4]
 // alternateSign([-2,-7,8,3,-1,4]) // [2,-7,8,-3,1,-4]
 var alternateSign = function(array) {
+	let result = [];
 	if(array.length === 0){return array}
-	//if(array[0] < 0){Math.abs(array)}
+	result.push(Math.abs(array[0]));
+	result.push(-Math.abs(array[1]));
+	result.push(...alternateSign(array.slice(2)));
 	
-	//{array[0].toString().slice(1).parseInt();}
-	//if(array[1] > 0){'-'.concat(array[1].toString()).parseInt();}
-	for(let i = 0; i < array.length; i++){
-		if(i % 2 === 1){ 
-			array[i] = Math.abs(array[i]) * -1
-		}  //negative
-		if(i % 2 === 0){
-			array[i] = Math.abs(array[i])
-		} //positive
-	}
-	return array;
+	// for(let i = 0; i < array.length; i++){
+	// 	if(i % 2 === 1){result.push(Math.abs(array[i]) * -1)}  //negative
+	// 	if(i % 2 === 0){result.push(Math.abs(array[i]))} //positive
+	// }
+	return result;
 };
