@@ -38,7 +38,6 @@ var compress = function(list) {
 // itself.
 // augmentElements([[],[3],[7]], 5); // [[5],[3,5],[7,5]]
 var augmentElements = function(array, aug) {
-
 	//works without recursion
 	//array.forEach(elem => elem.push(aug));
 	if(array.length === 0){return []}
@@ -78,3 +77,22 @@ var alternateSign = function(array) {
 	return result;
 };
 
+
+// 36. Given a string, return a string with digits converted to their word equivalent.
+// Assume all numbers are single digits (less than 10).
+// numToText("I have 5 dogs and 6 ponies"); // "I have five dogs and six ponies"
+var numToText = function(str) {
+	const hash = {0 : 'zero', 1: 'one', 2: 'two', 3: 'three', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine'}; 
+	let newStr = str.charAt(0);
+	
+	if(str.length === 0){return '';} //base case
+	for (let key in hash) { //loop inside hash object, find values and replace it
+		if (hash.hasOwnProperty(key)) {
+			if(newStr === key){
+      	newStr = hash[key];
+      }
+	  }
+	}
+
+return newStr.concat(numToText(str.slice(1)));
+}
