@@ -96,3 +96,70 @@ var numToText = function(str) {
 
 return newStr.concat(numToText(str.slice(1)));
 }
+
+
+
+// 38. Write a function for binary search.
+// var array = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+// binarySearch(array, 5) // 5
+// // https://www.khanacademy.org/computing/computer-science/algorithms/binary-search/a/binary-search
+var binarySearch = function(array, target, min, max) {
+	min = 0;
+	max =  array.length - 1;
+	let middle = Math.floor((min + max)/2);
+	
+	while (min <= max){
+		if (target === array[middle]){return middle;}
+		if(target < array[middle]){
+			max = middle - 1;
+		}
+		else {
+			min = middle + 1;
+		}
+		return binarySearch(array, target, min, max);
+	}
+	if(min > max){return null;}
+}
+
+
+
+// 39. Write a merge sort function.
+// mergeSort([34,7,23,32,5,62]) // [5,7,23,32,34,62]
+// https://www.khanacademy.org/computing/computer-science/algorithms/merge-sort/a/divide-and-conquer-algorithms
+var mergeSort = function(array) {
+
+	// function mergeSort(array) {
+	// 	if(array.length <= 1){return array};
+	// 	let middle = Math.floor(array.length/2);
+		
+	// 	let lowArray = array.slice(0, middle);
+	// 	let highArray = array.slice(middle);
+			
+		// return mergerFunc(mergeSort(lowArray), mergeSort(highArray));
+	}
+
+
+// 40. Deeply clone objects and arrays.
+// var obj1 = {a:1,b:{bb:{bbb:2}},c:3};
+// var obj2 = clone(obj1);
+// console.log(obj2); // {a:1,b:{bb:{bbb:2}},c:3}
+// obj1 === obj2 // false
+var clone = function(input) {
+	let copy;
+	if(input instanceof Object){
+		copy = {};
+		//copy = input.constructor();
+		for(let key in input){
+			if(input.hasOwnProperty(key)){
+				copy[key] = clone(input[key];)
+			}
+		}
+	}
+	if (Array.isArray(input)){
+		clone = [];
+		for(let i = 0; i < input.length; i++){
+			copy[i] = clone(input[i]);
+		}
+	} 
+	return copy;
+};
